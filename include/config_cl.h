@@ -3,7 +3,8 @@
 
 # define CL_SILENCE_DEPRECATION
 
-# include "../include/math_vec.h"
+# include "math_vec.h"
+# include "rt_camera.h"
 # include "utilits.h"
 # include "rt.h"
 

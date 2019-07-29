@@ -15,21 +15,21 @@
 #include <unistd.h>
 #include <string.h>
 #include "rt.h"
-#include "rt_camera.h"
+#include "rt_physics.h"
 #include "config.h"
 
-static int	physics(void *a)
-{
-	t_ui_main	*m;
-
-	m = (t_ui_main *)a;
-	while (1)
-	{
-		move_camera(m);
-		rotate_camera(m);
-		SDL_Delay(5);
-	}
-}
+//static int	physics(void *a)
+//{
+//	t_ui_main	*m;
+//
+//	m = (t_ui_main *)a;
+//	while (1)
+//	{
+//		move_camera(m);
+//		rotate_camera(m);
+//		SDL_Delay(5);
+//	}
+//}
 
 void	setup_scene(t_conf *conf)
 {
@@ -58,7 +58,6 @@ int main(void)
 					"src/get_cam_ray.cl", "utilits_cl/math_vec.cl",
 					"utilits_cl/color.cl", NULL}, (char *[]){"render", NULL});
 	setup_scene(&conf);
-	setup_camera(&conf.camera);
 	m->data = &conf;
     ui_main_add_function_by_id(m, ray_marching_render, "ray_marching_render");
     ui_jtoc_main_from_json(m, "json/main.json");
@@ -67,20 +66,25 @@ int main(void)
 	initialization_surface(el, w);
 
 	/// !!!
-	conf.camera.rot_velocity = (t_vector3d){0, 0, 0};
-	conf.camera.rot_speed = 1;
-	conf.camera.rot_acc = .04f;
-	conf.camera.local_x = (t_vector3d){1, 0, 0};
-	conf.camera.local_y = (t_vector3d){0, 1, 0};
-	conf.camera.local_z = (t_vector3d){0, 0, 1};
+	conf.camera.aspect_ratio = 16.f / 9.f;
+	conf.camera.min_distance = 1000;
+	conf.camera.max_distance = 1000;
+//	conf.camera->pos = (t_vector3d){1, 1, 1};
 
-	conf.camera.velocity = (t_vector3d){0, 0, 0};
-	conf.camera.speed = .025f;
-	conf.camera.pos_acc = .04f;
+//	conf.camera.rot_velocity = (t_vector3d){0, 0, 0};
+//	conf.camera.rot_speed = 1;
+//	conf.camera.rot_acc = .04f;
+//	conf.camera.local_x = (t_vector3d){1, 0, 0};
+//	conf.camera.local_y = (t_vector3d){0, 1, 0};
+//	conf.camera.local_z = (t_vector3d){0, 0, 1};
 
-	SDL_Thread	*thread;
-	thread = SDL_CreateThread(physics, "physics", (void *)m);
-	SDL_DetachThread(thread);
+//	conf.camera.velocity = (t_vector3d){0, 0, 0};
+//	conf.camera.speed = .025f;
+//	conf.camera.pos_acc = .04f;
+
+//	SDL_Thread	*thread;
+//	thread = SDL_CreateThread(physics, "physics", (void *)m);
+//	SDL_DetachThread(thread);
 	/// !!!
 
     ui_main_run_program(m);

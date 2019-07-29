@@ -136,7 +136,7 @@ void	move_camera(t_ui_main *m)
 	else if (!m->state[SDL_SCANCODE_S] && !m->state[SDL_SCANCODE_W])
 		raw_velocity.z = 0;
 
-	float mult = (m->state[225] ? 2 : 1);
+	float mult = (m->state[225] ? 5 : 1);
 	cam->velocity.x = ft_lerp(cam->velocity.x, raw_velocity.x * mult,
 			ft_fmin(1, cam->pos_acc / fabs(cam->velocity.x - raw_velocity.x)));
 	cam->velocity.y = ft_lerp(cam->velocity.y, raw_velocity.y * mult,

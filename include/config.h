@@ -23,6 +23,7 @@
 # include <stdio.h>
 # include "libui.h"
 # include "libcl.h"
+# include "rt_camera.h"
 
 typedef struct			s_config
 {
@@ -32,7 +33,6 @@ typedef struct			s_config
 	t_cl				*cl;
 }						t_conf;
 
-void					setup_camera(t_camera *camera);
 void					setup_scene(t_conf *conf);
 int						ray_marching_render(t_ui_main *m, void *a);
 #endif
