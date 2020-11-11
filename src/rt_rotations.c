@@ -14,7 +14,7 @@
 
 void	fill_rotation_matrix(float *m, cl_float3 v, float a)
 {
-	float rads = a / 180 * M_PI;
+	float rads = a / 180 * 3.1416;
 	float c = cosf(rads);
 	float s = sinf(rads);
 

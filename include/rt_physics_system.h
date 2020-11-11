@@ -16,10 +16,17 @@
 # define CL_SILENCE_DEPRECATION
 
 # ifndef OPENCL___
-#  include <OpenCL/opencl.h>
-#  include <SDL.h>
-#  include "libft.h"
-#  include "transform.h"
+# ifdef APPLE___
+# include <OpenCL/opencl.h>
+# else
+# include <opencl.h>
+# endif
+# include <SDL.h>
+# include "libft.h"
+# include "transform.h"
+# include "rt_rotations.h"
+# include "rt_numerics.h"
+# include "rt_utilities.h"
 # endif
 
 typedef struct		s_move_params
@@ -43,8 +50,8 @@ typedef struct		s_rb
 typedef struct		s_physics_system
 {
 	t_system		system;
-	t_rb			*rbs;
-	size_t			rbs_count;
+	t_vec			rbs;
+	int				change_indicator;
 }					t_physics_system;
 
 int					ps_func(void *psv);

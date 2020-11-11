@@ -14,7 +14,11 @@
 # define RT_OBJECT_H
 
 # ifndef OPENCL___
-#  include <OpenCL/opencl.h>
+# ifdef APPLE___
+# include <OpenCL/opencl.h>
+# else
+# include <opencl.h>
+# endif
 # endif
 
 # include "transform.h"
@@ -51,9 +55,11 @@ typedef struct			s_round_box
 typedef struct			s_torus
 {
 # ifndef OPENCL___
-	cl_float2			params;
+	cl_float	radius;
+	cl_float	inner_radius;
 # else
-	float2				params;
+	float	radius;
+	float	inner_radius;
 # endif
 }						t_torus;
 
@@ -110,6 +116,58 @@ typedef struct			s_plane
 # endif
 }						t_plane;
 
+typedef struct			s_mandelbulb
+{
+# ifndef OPENCL___
+	float				power;
+	int					iteration;
+	int					breakout;
+# else
+	float				power;
+	int					iteration;
+	int					breakout;
+# endif
+}						t_mandelbulb;
+
+typedef struct			s_mandelbox
+{
+# ifndef OPENCL___
+	cl_float3			cube_size;
+	float				scale;
+	float 				fixedradius;
+	float 				minradius;
+	int					iteration;
+# else
+	float3				cube_size;
+	float				scale;
+	float 				fixedradius;
+	float 				minradius;
+	int					iteration;
+# endif
+}						t_mandelbox;
+
+typedef struct			s_menger_sponge
+{
+# ifndef OPENCL___
+    cl_float3			offset;
+    float				scale;
+    int					iteration;
+# else
+    float3				offset;
+	float				scale;
+	int					iteration;
+# endif
+}						t_menger_sponge;
+
+typedef struct 			s_octahedron
+{
+# ifndef OPENCL___
+	float 				bounds;
+# else
+	float				bounds;
+# endif
+}						t_octahedron;
+
 union					u_oparams
 {
 	t_sphere			sphere;
@@ -121,11 +179,15 @@ union					u_oparams
 	t_cylinder			cylinder;
 	t_cone				cone;
 	t_plane				plane;
+	t_octahedron		octahedron;
+	t_mandelbulb		mandelbulb;
+	t_mandelbox			mandelbox;
+	t_menger_sponge     menger_sponge;
 };
 
 enum					e_object_type
 {
-	o_sphere,
+	o_sphere = 1,
 	o_box,
 	o_round_box,
 	o_torus,
@@ -133,25 +195,51 @@ enum					e_object_type
 	o_link,
 	o_cylinder,
 	o_cone,
-	o_plane
+	o_plane,
+	o_octahedron,
+	o_mandelbulb,
+	o_mandelbox,
+	o_menger_sponge
 };
 
 typedef struct			s_omaterial
 {
 # ifndef OPENCL___
 	cl_float4			color;
+	cl_int 				texture_id;
+	cl_float2			offset; // смещение текстуры
+	cl_float2 			tiling; // размер текстуры
+	cl_float3			luminosity;
 # else
 	float4				color;
+	int					texture_id;
+	float2				offset;
+	float2				tiling;
+	float3				luminosity;
 # endif
 }						t_omaterial;
 
 typedef struct			s_object
 {
+# ifndef OPENCL___
 	t_transform			transform;
 	union u_oparams		params;
 	enum e_object_type	type;
 	t_omaterial			material;
+	char				*local_name;
+	int     	        sub_mult_flag;
+	int                 obj_with_oper_id;
 	int					layer;
+# else
+	t_transform			transform;
+	union u_oparams		params;
+	enum e_object_type	type;
+	t_omaterial			material;
+	int2				local_name;
+	int                 sub_mult_flag;
+	int                 obj_with_oper_id;
+	int					layer;
+# endif
 }						t_object;
 
 #endif

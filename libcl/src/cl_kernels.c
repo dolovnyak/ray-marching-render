@@ -18,15 +18,14 @@ static void	cl_add_kernel_by_name(t_cl *cl, char *name)
 	t_list		*lst;
 	int			hash;
 	cl_kernel	*kernel;
+	cl_program	*program;
 
+	program = (cl_program *)cl->programs->content;
 	lst = NULL;
 	kernel = (cl_kernel *)ft_x_memalloc(sizeof(cl_kernel));
-	*kernel = clCreateKernel(*cl->program, name, &err);
+	*kernel = clCreateKernel(*program, name, &err);
 	if (err != 0 || !(lst = ft_lstnew(NULL, 0)))
-	{
-		SDL_Log("create kernel - ERROR\n");
-		exit(-1);
-	}
+		cl_exit_error("create kernel");
 	hash = ft_strhash(name);
 	lst->content = (void *)kernel;
 	lst->content_size = hash;
@@ -38,7 +37,6 @@ void		cl_fill_kernels(t_cl *cl, char **kernels)
 	size_t	i;
 
 	i = -1;
-	cl->kernels = NULL;
 	while (kernels[++i])
 		cl_add_kernel_by_name(cl, kernels[i]);
 }

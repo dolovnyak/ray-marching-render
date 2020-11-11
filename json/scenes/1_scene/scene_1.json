@@ -1,0 +1,695 @@
+{
+  "smoothing": 0,
+  "path_trace_number": 1,
+  "path_trace_bounces": 2,
+  "quality": 100,
+  "camera":
+  {
+    "id": 1,
+    "fov": 90.0,
+    "clipping_planes":
+    {
+      "near": 0.5,
+      "far": 500.0
+    },
+    "transform":
+    {
+      "pos":
+      {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 20.0
+      },
+      "eulers":
+      {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    }
+  },
+  "lights":
+  {
+    "ambient":
+    {
+      "x": 0.1,
+      "y": 0.1,
+      "z": 0.1
+    },
+    "directional_lights":
+    [
+      {
+        "color":
+        {
+          "x": 0.5,
+          "y": 0.5,
+          "z": 0.5
+        },
+        "transform":
+        {
+          "pos":
+          {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "eulers":
+          {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          }
+        }
+      }
+    ],
+    "point_lights":
+    [
+      {
+        "color":
+        {
+          "x": 0.0,
+          "y": 0.9,
+          "z": 0.0
+        },
+        "transform":
+        {
+          "pos":
+          {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "eulers":
+          {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          }
+        },
+        "distance": 100.0
+      },
+      {
+        "color":
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.5
+        },
+        "transform":
+        {
+          "pos":
+          {
+            "x": 30.0,
+            "y": 10.0,
+            "z": 0.0
+          },
+          "eulers":
+          {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          }
+        },
+        "distance": 100.0
+      }
+    ]
+  },
+  "objects":
+  [
+    {
+      "id": 2,
+      "type": "plane",
+      "layer": "ignore_raycast_layer",
+      "texture": "none",
+      "distance": 100.0,
+      "color": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "w": 1.0
+      },
+      "transform": {
+        "pos": {
+          "x": 200.0,
+          "y": -20000.0,
+          "z": -200.0
+        },
+        "eulers":
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        }
+      }
+    },
+    {
+      "id": 3,
+      "type": "sphere",
+      "layer": "default_layer",
+      "texture": "none",
+      "radius": 3.0,
+      "color":
+      {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 1.0,
+        "w": 1.0
+      },
+      "transform":
+      {
+        "pos":
+        {
+          "x": 0.0,
+          "y": 10.0,
+          "z": 0.0
+        },
+        "eulers":
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        }
+      }
+    },
+    {
+      "id": 4,
+      "type": "sphere",
+      "layer": "default_layer",
+      "texture": "none",
+      "radius": 2.0,
+      "color":
+      {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0,
+        "w": 1.0
+      },
+      "transform":
+      {
+        "pos":
+        {
+          "x": 0.0,
+          "y": 20.0,
+          "z": 0.0
+        },
+        "eulers":
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        }
+      }
+    },
+    {
+      "id": 5,
+      "type": "sphere",
+      "layer": "default_layer",
+      "texture": "none",
+      "radius": 1.0,
+      "color":
+      {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "w": 0.0
+      },
+      "transform":
+      {
+        "pos":
+        {
+          "x": 0.0,
+          "y": 30.0,
+          "z": 0.0
+        },
+        "eulers":
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        }
+      }
+    },
+    {
+      "id": 6,
+      "type": "box",
+      "layer": "default_layer",
+      "texture": "none",
+      "bounds":
+      {
+        "x": 1.0,
+        "y": 2.0,
+        "z": 3.0
+      },
+      "color":
+      {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 1.0,
+        "w": 1.0
+      },
+      "transform":
+      {
+        "pos":
+        {
+          "x": 0.0,
+          "y": 10.0,
+          "z": 10.0
+        },
+        "eulers":
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        }
+      }
+    },
+    {
+      "id": 7,
+      "type": "box",
+      "layer": "default_layer",
+      "texture": "none",
+      "bounds":
+      {
+        "x": 0.5,
+        "y": 1.0,
+        "z": 1.5
+      },
+      "color":
+      {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 1.0,
+        "w": 1.0
+      },
+      "transform":
+      {
+        "pos":
+        {
+          "x": 0.0,
+          "y": 20.0,
+          "z": 10.0
+        },
+        "eulers":
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        }
+      }
+    },
+    {
+      "id": 8,
+      "type": "box",
+      "layer": "default_layer",
+      "texture": "none",
+      "bounds":
+      {
+        "x": 0.25,
+        "y": 0.5,
+        "z": 0.75
+      },
+      "color":
+      {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 1.0,
+        "w": 1.0
+      },
+      "transform":
+      {
+        "pos":
+        {
+          "x": 0.0,
+          "y": 30.0,
+          "z": 10.0
+        },
+        "eulers":
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        }
+      }
+    },
+    {
+      "id": 9,
+      "type": "round_box",
+      "layer": "default_layer",
+      "texture": "none",
+      "bounds":
+      {
+        "x": 1.0,
+        "y": 2.0,
+        "z": 3.0
+      },
+      "rounding_radius": 1.0,
+      "color":
+      {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 1.0,
+        "w": 1.0
+      },
+      "transform":
+      {
+        "pos":
+        {
+          "x": 0.0,
+          "y": 10.0,
+          "z": 20.0
+        },
+        "eulers":
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        }
+      }
+    },
+    {
+      "id": 10,
+      "type": "round_box",
+      "layer": "default_layer",
+      "texture": "none",
+      "bounds":
+      {
+        "x": 0.5,
+        "y": 1.0,
+        "z": 1.5
+      },
+      "rounding_radius": 1.0,
+      "color":
+      {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 1.0,
+        "w": 1.0
+      },
+      "transform":
+      {
+        "pos":
+        {
+          "x": 0.0,
+          "y": 20.0,
+          "z": 20.0
+        },
+        "eulers":
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        }
+      }
+    },
+    {
+      "id": 11,
+      "type": "round_box",
+      "layer": "default_layer",
+      "texture": "none",
+      "bounds":
+      {
+        "x": 0.25,
+        "y": 0.5,
+        "z": 0.75
+      },
+      "rounding_radius": 1.0,
+      "color":
+      {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 1.0,
+        "w": 1.0
+      },
+      "transform":
+      {
+        "pos":
+        {
+          "x": 0.0,
+          "y": 30.0,
+          "z": 20.0
+        },
+        "eulers":
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        }
+      }
+    },
+    {
+      "id": 12,
+      "type": "torus",
+      "layer": "default_layer",
+      "texture": "none",
+      "radius": 3.0,
+      "inner_radius": 0.25,
+      "color":
+      {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 1.0,
+        "w": 1.0
+      },
+      "transform":
+      {
+        "pos":
+        {
+          "x": 0.0,
+          "y": 10.0,
+          "z": 30.0
+        },
+        "eulers":
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        }
+      }
+    },
+    {
+      "id": 13,
+      "type": "torus",
+      "layer": "default_layer",
+      "texture": "none",
+      "radius": 2.0,
+      "inner_radius": 0.25,
+      "color":
+      {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 1.0,
+        "w": 1.0
+      },
+      "transform":
+      {
+        "pos":
+        {
+          "x": 0.0,
+          "y": 10.0,
+          "z": 30.0
+        },
+        "eulers":
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        }
+      }
+    },
+    {
+      "id": 14,
+      "type": "torus",
+      "layer": "default_layer",
+      "texture": "none",
+      "radius": 1.0,
+      "inner_radius": 0.25,
+      "color":
+      {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 1.0,
+        "w": 1.0
+      },
+      "transform":
+      {
+        "pos":
+        {
+          "x": 0.0,
+          "y": 10.0,
+          "z": 30.0
+        },
+        "eulers":
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        }
+      }
+    },
+    {
+      "id": 15,
+      "type": "sphere",
+      "layer": "default_layer",
+      "texture": "none",
+      "radius": 0.5,
+      "color": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+      },
+      "transform": {
+        "pos": {
+          "x": 0.0,
+          "y": 10.0,
+          "z": 30.0
+        },
+        "eulers":
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        }
+      }
+    },
+    {
+      "id": 16,
+      "type": "cone",
+      "layer": "default_layer",
+      "texture": "none",
+      "params":
+      {
+        "x": 20.0,
+        "y": 0.2
+      },
+      "color":
+      {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 1.0,
+        "w": 1.0
+      },
+      "transform":
+      {
+        "pos":
+        {
+          "x": 0.0,
+          "y": 30.0,
+          "z": 40.0
+        },
+        "eulers":
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        }
+      }
+    },
+    {
+      "id": 17,
+      "type": "cylinder",
+      "layer": "default_layer",
+      "texture": "none",
+      "params":
+      {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.5
+      },
+      "color":
+      {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 1.0,
+        "w": 1.0
+      },
+      "transform":
+      {
+        "pos":
+        {
+          "x": 0.0,
+          "y": 30.0,
+          "z": 40.0
+        },
+        "eulers":
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        }
+      }
+    },
+    {
+      "id": 18,
+      "type": "link",
+      "layer": "default_layer",
+      "texture": "none",
+      "le": 3.0,
+      "r1": 2.0,
+      "r2": 1.0,
+      "color":
+      {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 1.0,
+        "w": 1.0
+      },
+      "transform":
+      {
+        "pos":
+        {
+          "x": 0.0,
+          "y": 30.0,
+          "z": 30.0
+        },
+        "eulers":
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        }
+      }
+    }
+  ],
+  "rigid_bodies":
+  [
+    {
+      "element_id": 1,
+      "move":
+      {
+        "speed": 10000.0,
+        "speed_mult": 4.0,
+        "braking_coef": 0.025,
+        "velocity":
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "raw_velocity":
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        }
+      },
+      "rot":
+      {
+        "speed": 100000.0,
+        "braking_coef": 0.04,
+        "velocity":
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "raw_velocity":
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        }
+      }
+    }
+  ]
+}

@@ -18,17 +18,17 @@
 typedef struct			s_raycast_hit
 {
 # ifndef OPENCL___
-	t_object			*hit;
 	cl_float3			normal;
 	cl_float3			point;
+	cl_float3			local_point;
 	cl_float			distance;
-	cl_float			clip_ratio;
+	t_object			*hit;
 # else
-	__global t_object	*hit;
 	float3				normal;
 	float3				point;
+	float3				local_point;
 	float				distance;
-	float				clip_ratio;
+	__global t_object	*hit;
 # endif
 }						t_raycast_hit;
 

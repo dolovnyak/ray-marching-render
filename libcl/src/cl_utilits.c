@@ -12,6 +12,18 @@
 
 #include "libcl.h"
 
+void	cl_exit_error(char *output_error)
+{
+	printf("ERROR: %s\n", output_error);
+	exit(-1);
+}
+
+void	cl_error_handler(char *output_error, int err)
+{
+	if (err != 0)
+		cl_exit_error(output_error);
+}
+
 size_t	cl_get_files_num(char **files)
 {
 	size_t i;
@@ -30,7 +42,10 @@ char	*cl_get_file_buf(const char *name, size_t *program_size)
 
 	fd = fopen(name, "r");
 	if (!fd)
-		SDL_Log("Open kernel file '%s' - ERROR\n", name);
+	{
+		printf("ERROR: Open kernel file '%s'\n", name);
+		exit(-1);
+	}
 	fseek(fd, 0, SEEK_END);
 	file_size = ftell(fd);
 	rewind(fd);
