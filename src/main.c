@@ -66,7 +66,13 @@ int main()
 
 	rt_uix_interface_setup(ui, "json/interface/main.json");
 	rt_screen_size = modification_rt_elem_and_get_screen_size(ui);
-	rt = rt_setup(rt_screen_size, "json/textures.json", "json/scenes/test1_scene/test1.json");
+//	rt = rt_setup(rt_screen_size, "json/textures.json", "json/scenes/test1_scene/test1.json");
+//    rt = rt_setup(rt_screen_size, "json/textures.json", "json/scenes/mandelbulb_scene/mandelbulb.json");
+//    rt = rt_setup(rt_screen_size, "json/textures.json", "json/scenes/scene_nice/test2.json");
+    rt = rt_setup(rt_screen_size, "json/textures.json", "json/scenes/menger_sponge_scene/menger_sponge.json");
+//    rt = rt_setup(rt_screen_size, "json/textures.json", "json/scenes/mandelbox_scene/mandelbox.json");
+//	rt = rt_setup(rt_screen_size, "json/textures.json", "json/scenes/1_scene/scene_1.json");
+//    rt = rt_setup(rt_screen_size, "json/textures.json", "json/scenes/test_scene/test_scene.json");
 	ui->data = (void *)rt;
 	rt_uix_scene_setup(ui);
 

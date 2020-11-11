@@ -1,4 +1,7 @@
 {
+  "smoothing": 0,
+  "path_trace_number": 1,
+  "path_trace_bounces": 2,
   "quality": 100,
   "camera":
   {
@@ -67,7 +70,7 @@
       "type": "mandelbox",
       "layer": "ignore_raycast_layer",
       "texture": "none",
-      "scale": -1.73,
+      "scale": 2.73,
       "fixedradius": 2.0,
       "minradius": 0.5,
       "iteration": 10,
