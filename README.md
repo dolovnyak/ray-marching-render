@@ -1,6 +1,4 @@
-# Ray marching
-
-ray tracing algorithm subtype
+# Raymarching
 ---------
 ![](https://github.com/dolovnyak/ray-marching-render/blob/master/screenshots/ezgif.com-gif-maker2.gif)
 ![](https://github.com/dolovnyak/ray-marching-render/blob/master/screenshots/ezgif.com-gif-maker.gif)
